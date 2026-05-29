@@ -61,9 +61,8 @@ class Command(BaseCommand):
 
     def _create_user(self, username, email, password):
         user, created = User.objects.get_or_create(username=username, defaults={"email": email})
-        if created:
-            user.set_password(password)
-            user.save()
+        user.set_password(password)
+        user.save()
         return user
 
     def _seed_emission_factors(self):
