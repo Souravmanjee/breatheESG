@@ -23,9 +23,9 @@ The application is deployed and fully operational:
 *   **API Health & Database Status**: [https://breatheesg-production-83a0.up.railway.app/api/health/](https://breatheesg-production-83a0.up.railway.app/api/health/)
 
 ### Demo Credentials
-Use either of the pre-seeded tenant accounts to log in:
-*   **Analyst Account**: `analyst` | Password: `demo1234`
-*   **Admin Account**: `admin_acme` | Password: `demo1234`
+Use the pre-seeded tenant administrator credentials:
+*   **Username**: `breatheEsgAdmin`
+*   **Password**: `Thanksforthetest`
 *   **Tenant Slug**: `acme`
 
 ---

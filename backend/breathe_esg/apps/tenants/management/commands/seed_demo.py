@@ -4,7 +4,7 @@ Run: python manage.py seed_demo
 
 Creates:
   - Tenant: "Acme Corp" (slug: acme)
-  - Users: analyst@acme.com / admin@acme.com (password: demo1234 for both)
+  - Users: breatheEsgAdmin (password: Thanksforthetest)
   - Emission factors from DEFRA 2023
   - Sample emission records across all three sources
 """
@@ -38,28 +38,25 @@ class Command(BaseCommand):
         self.stdout.write(f"  Tenant: {tenant.name}")
 
         # Create users
-        analyst = self._create_user("analyst", "analyst@acme.com", "demo1234")
-        admin_user = self._create_user("admin_acme", "admin@acme.com", "demo1234")
+        # Clean up legacy demo users
+        User.objects.filter(username__in=["analyst", "admin_acme"]).delete()
 
-        TenantMembership.objects.get_or_create(
-            user=analyst, tenant=tenant,
-            defaults={"role": TenantMembership.ROLE_ANALYST}
-        )
+        admin_user = self._create_user("breatheEsgAdmin", "admin@acme.com", "Thanksforthetest")
+
         TenantMembership.objects.get_or_create(
             user=admin_user, tenant=tenant,
             defaults={"role": TenantMembership.ROLE_ADMIN}
         )
-        self.stdout.write(f"  Users created: analyst / admin_acme (password: demo1234)")
+        self.stdout.write(f"  User created: breatheEsgAdmin (password: Thanksforthetest)")
 
         # Create sample emission records
-        self._seed_sap_records(tenant, analyst)
-        self._seed_utility_records(tenant, analyst)
-        self._seed_travel_records(tenant, analyst)
+        self._seed_sap_records(tenant, admin_user)
+        self._seed_utility_records(tenant, admin_user)
+        self._seed_travel_records(tenant, admin_user)
 
         self.stdout.write(self.style.SUCCESS("Demo data seeded successfully."))
         self.stdout.write("Login at /api/auth/login/ with:")
-        self.stdout.write("  analyst / demo1234")
-        self.stdout.write("  admin_acme / demo1234")
+        self.stdout.write("  breatheEsgAdmin / Thanksforthetest")
         self.stdout.write("Tenant slug: acme")
 
     def _create_user(self, username, email, password):

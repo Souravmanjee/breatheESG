@@ -47,7 +47,7 @@ export default function LoginPage() {
               className="form-input"
               value={form.username}
               onChange={e => setForm(f => ({ ...f, username: e.target.value }))}
-              placeholder="analyst"
+              placeholder="breatheEsgAdmin"
               autoFocus
             />
           </div>
@@ -70,11 +70,6 @@ export default function LoginPage() {
             {loading ? 'Signing in…' : 'Sign in'}
           </button>
         </form>
-
-        <div style={{ marginTop: 20, padding: '12px 14px', background: '#f8fafc', borderRadius: 6, fontSize: 12, color: '#64748b' }}>
-          <strong>Demo credentials:</strong><br />
-          analyst / demo1234 &nbsp;·&nbsp; admin_acme / demo1234
-        </div>
       </div>
     </div>
   )
