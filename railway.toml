@@ -1,0 +1,8 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "cd backend && python manage.py migrate && python manage.py seed_demo && gunicorn breathe_esg.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 60"
+healthcheckPath = "/api/auth/login/"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"

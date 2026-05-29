@@ -1,0 +1,49 @@
+# OS files
+.DS_Store
+Thumbs.db
+db.sqlite3-journal
+
+# Frontend (Vite/Node)
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+frontend/.env
+frontend/.env.*
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# Backend (Python/Django)
+__pycache__/
+backend/__pycache__/
+backend/*.py[cod]
+backend/*$py.class
+backend/.env
+backend/.venv
+backend/venv/
+backend/ENV/
+backend/env/
+backend/db.sqlite3
+backend/staticfiles/
+backend/media/
+
+# Environment files (general)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# IDEs/Editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,0 +1,7 @@
+Expense Type,Transaction Date,Employee ID,Employee Name,Vendor,City,Country,Amount,Currency,Origin,Destination,Cabin Class,Distance,Distance Unit,Hotel Name,Check-in,Check-out,Nights
+Airfare,2024-01-20,EMP-001,Priya Sharma,Air India,Mumbai,IN,85000,INR,BOM,LHR,Economy,,,,,, 
+Airfare,2024-02-05,EMP-002,Rajesh Kumar,Lufthansa,London,GB,450,GBP,LHR,FRA,Business Class,,,,,, 
+Airfare,2024-03-12,EMP-003,Ananya Singh,Emirates,Delhi,IN,32000,INR,DEL,DXB,Economy,,,,,, 
+Hotel,2024-01-20,EMP-001,Priya Sharma,Premier Inn Heathrow,London,GB,390,GBP,,,,,,Premier Inn Heathrow,2024-01-20,2024-01-23,3
+Hotel,2024-02-05,EMP-002,Rajesh Kumar,Marriott Frankfurt,Frankfurt,DE,320,EUR,,,,,,Marriott Frankfurt,2024-02-05,2024-02-07,2
+Ground Transportation,2024-01-08,EMP-003,Ananya Singh,Uber,Mumbai,IN,450,INR,,,,,,,,,
